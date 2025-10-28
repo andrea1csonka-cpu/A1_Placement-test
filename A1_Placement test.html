@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pioneer A1 Angol Szintfelmérő Teszt (100 pont)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e0f2f7 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            padding: 10px 15px;
+            background-color: #ecf0f1;
+            border-left: 6px solid #3498db;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+        }
+        h2 img {
+            margin-right: 15px;
+            width: 30px;
+            height: 30px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 1px dotted #bdc3c7;
+            padding-bottom: 8px;
+        }
+        .question-group {
+            margin-bottom: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8fcfd;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+        }
+        .question p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .options button {
+            background-color: #eaf3f8;
+            color: #2c3e50;
+            border: 1px solid #cce7f4;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+            font-size: 1em;
+            min-width: 120px;
+            text-align: left;
+        }
+        .options button:hover {
+            background-color: #cce7f4;
+            border-color: #9cd1ea;
+            transform: translateY(-2px);
+        }
+        .options button.selected {
+            background-color: #3498db;
+            color: white;
+            border-color: #2980b9;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+            transform: translateY(-1px);
+        }
+        .reading-comprehension-text {
+            background-color: #fdf6e3;
+            border: 1px dashed #f0e6c2;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #6a5a40;
+        }
+        .reading-comprehension-text p {
+            margin-bottom: 10px;
+            text-indent: 10px;
+            font-style: normal;
+        }
+        #result-container {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #d4edda;
+            border: 1px solid #28a745;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.3em;
+            color: #155724;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        }
+        #calculate-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            margin-top: 40px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.4em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        #calculate-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+        .score-evaluation {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .score-evaluation.excellent { color: #28a745; }
+        .score-evaluation.good { color: #ffc107; }
+        .score-evaluation.beginner { color: #dc3545; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pioneer A1 Angol Szintfelmérő Teszt (100 pont)</h1>
+
+        <form id="quiz-form">
+            <div class="question-group">
+                <h2><img src="https://www.flaticon.com/svg/static/icons/svg/2913/2913437.svg" alt="Grammar icon">I. Nyelvtan: To Be, Névelők, Többes szám</h2>
+                
+<div class="question" data-q="1">
+                    <p>1. Melyik a helyes 'to be' forma: I ___ from Hungary.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. are</button>
+                        <button type="button" data-answer="B">B. is</button>
+                        <button type="button" data-answer="C">C. am</button>
+                        <button type="button" data-answer="D">D. be</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="2">
+                    <p>2. Válaszd ki a helyes tagadást: She ___ a doctor.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. don't is</button>
+                        <button type="button" data-answer="B">B. isn't</button>
+                        <button type="button" data-answer="C">C. doesn't be</button>
+                        <button type="button" data-answer="D">D. am not</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="3">
+                    <p>3. Válaszd ki a helyes birtokos melléknevet: I have a brother. ___ name is Tom.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Her</button>
+                        <button type="button" data-answer="B">B. My</button>
+                        <button type="button" data-answer="C">C. Its</button>
+                        <button type="button" data-answer="D">D. His</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="4">
+                    <p>4. Egészítsd ki a mondatot a helyes határozatlan névelővel: This is ___ umbrella.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. a</button>
+                        <button type="button" data-answer="B">B. an</button>
+                        <button type="button" data-answer="C">C. the</button>
+                        <button type="button" data-answer="D">D. some</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="5">
+                    <p>5. Melyik a 'sandwich' helyes többes száma?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. sandwichs</button>
+                        <button type="button" data-answer="B">B. sandwiches</button>
+                        <button type="button" data-answer="C">C. sandwich's</button>
+                        <button type="button" data-answer="D">D. sandwichez</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="6">
+                    <p>6. Melyik a helyes birtokos eset: This is my parents ___ house.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. 's</button>
+                        <button type="button" data-answer="B">B. house</button>
+                        <button type="button" data-answer="C">C. parents</button>
+                        <button type="button" data-answer="D">D. '</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="7">
+                    <p>7. Válaszd ki a helyes mutató névmást: ___ is my best friend. (közel van hozzád)</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. These</button>
+                        <button type="button" data-answer="B">B. That</button>
+                        <button type="button" data-answer="C">C. Those</button>
+                        <button type="button" data-answer="D">D. This</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="8">
+                    <p>8. Melyik a 'woman' (nő) helyes többes száma?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. womans</button>
+                        <button type="button" data-answer="B">B. womies</button>
+                        <button type="button" data-answer="C">C. women</button>
+                        <button type="button" data-answer="D">D. woman's</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="9">
+                    <p>9. Melyik a helyes kiegészítés: Look at ___ house over there! (távoli, egyes számú)</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. this</button>
+                        <button type="button" data-answer="B">B. that</button>
+                        <button type="button" data-answer="C">C. these</button>
+                        <button type="button" data-answer="D">D. those</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="10">
+                    <p>10. Melyik a 'child' (gyermek) helyes többes száma?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. childs</button>
+                        <button type="button" data-answer="B">B. childen</button>
+                        <button type="button" data-answer="C">C. children</button>
+                        <button type="button" data-answer="D">D. child's</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="11">
+                    <p>11. Melyik a 'bus' (busz) helyes többes száma?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. bus</button>
+                        <button type="button" data-answer="B">B. buses</button>
+                        <button type="button" data-answer="C">C. buss</button>
+                        <button type="button" data-answer="D">D. bus's</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="12">
+                    <p>12. Melyik a helyes 'to be' forma: They ___ students.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. is</button>
+                        <button type="button" data-answer="B">B. am</button>
+                        <button type="button" data-answer="C">C. are</button>
+                        <button type="button" data-answer="D">D. be</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="13">
+                    <p>13. Válaszd ki a helyes névelőt: This is ___ apple.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. a</button>
+                        <button type="button" data-answer="B">B. an</button>
+                        <button type="button" data-answer="C">C. the</button>
+                        <button type="button" data-answer="D">D. some</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="14">
+                    <p>14. Melyik a 'foot' helyes többes száma?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. foots</button>
+                        <button type="button" data-answer="B">B. feets</button>
+                        <button type="button" data-answer="C">C. feet</button>
+                        <button type="button" data-answer="D">D. foot's</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="15">
+                    <p>15. Melyik a helyes tagadás: We ___ happy.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. don't are</button>
+                        <button type="button" data-answer="B">B. aren't</button>
+                        <button type="button" data-answer="C">C. doesn't be</button>
+                        <button type="button" data-answer="D">D. no are</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="16">
+                    <p>16. Válaszd ki a helyes birtokos melléknevet: This is my cat. ___ name is Luna.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Her</button>
+                        <button type="button" data-answer="B">B. His</button>
+                        <button type="button" data-answer="C">C. Its</button>
+                        <button type="button" data-answer="D">D. Our</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question-group">
+                <h2><img src="https://www.flaticon.com/svg/static/icons/svg/2913/2913437.svg" alt="Grammar icon">II. Nyelvtan: Present Simple, Kérdőszavak, Modális igék</h2>
+                
+<div class="question" data-q="17">
+                    <p>17. Egészítsd ki a mondatot helyesen: We ___ in a big city.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. lives</button>
+                        <button type="button" data-answer="B">B. live</button>
+                        <button type="button" data-answer="C">C. are living</button>
+                        <button type="button" data-answer="D">D. is live</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="18">
+                    <p>18. Válaszd ki a helyes igét: They ___ TV in the evenings.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. watches</button>
+                        <button type="button" data-answer="B">B. watch</button>
+                        <button type="button" data-answer="C">C. is watch</button>
+                        <button type="button" data-answer="D">D. watching</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="19">
+                    <p>19. Melyik kérdőszóval illeszkedik a mondatba: ___ is your name?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Who</button>
+                        <button type="button" data-answer="B">B. Where</button>
+                        <button type="button" data-answer="C">C. What</button>
+                        <button type="button" data-answer="D">D. How</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="20">
+                    <p>20. Melyik mondatban van helyesen a Present Simple kérdés: Does he ___ sport?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. plays</button>
+                        <button type="button" data-answer="B">B. play</button>
+                        <button type="button" data-answer="C">C. is playing</button>
+                        <button type="button" data-answer="D">D. to play</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="21">
+                    <p>21. Melyik szó jelenti azt, hogy 'képes valamire' (képesség)?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Must</button>
+                        <button type="button" data-answer="B">B. Can</button>
+                        <button type="button" data-answer="C">C. Should</button>
+                        <button type="button" data-answer="D">D. Will</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="22">
+                    <p>22. Melyik a helyes kiegészítés: Where ___ your parents live?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. is</button>
+                        <button type="button" data-answer="B">B. does</button>
+                        <button type="button" data-answer="C">C. do</button>
+                        <button type="button" data-answer="D">D. are</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="23">
+                    <p>23. Melyik a helyes tagadás: I ___ play football.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. am not</button>
+                        <button type="button" data-answer="B">B. doesn't</button>
+                        <button type="button" data-answer="C">C. don't</button>
+                        <button type="button" data-answer="D">D. no</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="24">
+                    <p>24. Melyik kérdőszóval kérdeznél rá valakinek az életkorára: ___ old are you?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. When</button>
+                        <button type="button" data-answer="B">B. What</button>
+                        <button type="button" data-answer="C">C. Who</button>
+                        <button type="button" data-answer="D">D. How</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="25">
+                    <p>25. Melyik a helyes kiegészítés: Where ___ she work?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. do</button>
+                        <button type="button" data-answer="B">B. is</button>
+                        <button type="button" data-answer="C">C. does</button>
+                        <button type="button" data-answer="D">D. are</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="26">
+                    <p>26. Melyik a helyes sorrend a mondatban: always / I / breakfast / eat / at 7.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. I eat always breakfast at 7.</button>
+                        <button type="button" data-answer="B">B. Always I eat breakfast at 7.</button>
+                        <button type="button" data-answer="C">C. I always eat breakfast at 7.</button>
+                        <button type="button" data-answer="D">D. I eat breakfast at 7 always.</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="27">
+                    <p>27. Válaszd ki a helyes igét: He ___ English at school.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. study</button>
+                        <button type="button" data-answer="B">B. studies</button>
+                        <button type="button" data-answer="C">C. is studying</button>
+                        <button type="button" data-answer="D">D. to study</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="28">
+                    <p>28. Melyik a helyes kérdés: ___ do you go to bed?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. What time</button>
+                        <button type="button" data-answer="B">B. What</button>
+                        <button type="button" data-answer="C">C. How</button>
+                        <button type="button" data-answer="D">D. Where</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="29">
+                    <p>29. Egészítsd ki a mondatot: She ___ drink coffee.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. doesn't</button>
+                        <button type="button" data-answer="B">B. don't</button>
+                        <button type="button" data-answer="C">C. isn't</button>
+                        <button type="button" data-answer="D">D. no</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="30">
+                    <p>30. Melyik modális igét használnánk tanácsadásra: You ___ eat more vegetables.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. must</button>
+                        <button type="button" data-answer="B">B. can</button>
+                        <button type="button" data-answer="C">C. should</button>
+                        <button type="button" data-answer="D">D. will</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="31">
+                    <p>31. ___ do you live? - I live in Budapest.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. What</button>
+                        <button type="button" data-answer="B">B. When</button>
+                        <button type="button" data-answer="C">C. Where</button>
+                        <button type="button" data-answer="D">D. How</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="32">
+                    <p>32. Válaszd ki a helyes mondatot:</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Does you like pizza?</button>
+                        <button type="button" data-answer="B">B. Do you like pizza?</button>
+                        <button type="button" data-answer="C">C. Are you like pizza?</button>
+                        <button type="button" data-answer="D">D. Is you like pizza?</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h2><img src="https://www.flaticon.com/svg/static/icons/svg/806/806275.svg" alt="Vocabulary icon">III. Szókincs és Kifejezések</h2>
+                
+<div class="question" data-q="33">
+                    <p>33. Melyik szó jelenti azt, hogy 'hálószoba'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Kitchen</button>
+                        <button type="button" data-answer="B">B. Bathroom</button>
+                        <button type="button" data-answer="C">C. Bedroom</button>
+                        <button type="button" data-answer="D">D. Living room</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="34">
+                    <p>34. Melyik szó jelenti azt, hogy 'tanuló/diák'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Teacher</button>
+                        <button type="button" data-answer="B">B. Student</button>
+                        <button type="button" data-answer="C">C. Worker</button>
+                        <button type="button" data-answer="D">D. Doctor</button>
+                    </div>
+                </div>
+                
+                <div class="question" data-q="35">
+                    <p>35. Melyik szó jelenti azt, hogy 'iroda'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Office</button>
+                        <button type="button" data-answer="B">B. Shop</button>
+                        <button type="button" data-answer="C">C. School</button>
+                        <button type="button" data-answer="D">D. Hospital</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="36">
+                    <p>36. Melyik szó jelenti azt, hogy 'újság'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Magazine</button>
+                        <button type="button" data-answer="B">B. Newspaper</button>
+                        <button type="button" data-answer="C">C. Book</button>
+                        <button type="button" data-answer="D">D. Notebook</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="37">
+                    <p>37. Melyik szó jelenti azt, hogy 'vasútállomás'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Bus stop</button>
+                        <button type="button" data-answer="B">B. Airport</button>
+                        <button type="button" data-answer="C">C. Train station</button>
+                        <button type="button" data-answer="D">D. Motorway</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="38">
+                    <p>38. Melyik szó jelenti azt, hogy 'családfa'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Family photo</button>
+                        <button type="button" data-answer="B">B. Family tree</button>
+                        <button type="button" data-answer="C">C. Family house</button>
+                        <button type="button" data-answer="D">D. Family names</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="39">
+                    <p>39. Melyik szó jelenti azt, hogy 'étterem'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Coffee shop</button>
+                        <button type="button" data-answer="B">B. Restaurant</button>
+                        <button type="button" data-answer="C">C. Supermarket</button>
+                        <button type="button" data-answer="D">D. Bookshop</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="40">
+                    <p>40. Melyik szó jelenti azt, hogy 'utca'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Road</button>
+                        <button type="button" data-answer="B">B. Street</button>
+                        <button type="button" data-answer="C">C. Square</button>
+                        <button type="button" data-answer="D">D. Motorway</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="41">
+                    <p>41. Melyik szó jelenti azt, hogy 'narancslé'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Water</button>
+                        <button type="button" data-answer="B">B. Milk</button>
+                        <button type="button" data-answer="C">C. Tea</button>
+                        <button type="button" data-answer="D">D. Orange juice</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="42">
+                    <p>42. Melyik szó jelenti azt, hogy 'színész'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Singer</button>
+                        <button type="button" data-answer="B">B. Teacher</button>
+                        <button type="button" data-answer="C">C. Actor</button>
+                        <button type="button" data-answer="D">D. Writer</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="43">
+                    <p>43. Melyik szó jelenti azt, hogy 'nagyapa'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Mother</button>
+                        <button type="button" data-answer="B">B. Grandmother</button>
+                        <button type="button" data-answer="C">C. Grandfather</button>
+                        <button type="button" data-answer="D">D. Uncle</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="44">
+                    <p>44. Melyik a 'Summer' (nyár) utáni évszak?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Spring</button>
+                        <button type="button" data-answer="B">B. Winter</button>
+                        <button type="button" data-answer="C">C. Autumn</button>
+                        <button type="button" data-answer="D">D. Rainy season</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="45">
+                    <p>45. Melyik a 'father' szó megfelelő női megfelelője?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Uncle</button>
+                        <button type="button" data-answer="B">B. Mother</button>
+                        <button type="button" data-answer="C">C. Sister</button>
+                        <button type="button" data-answer="D">D. Aunt</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="46">
+                    <p>46. Melyik szó illik a 'bread and ___' kifejezéshez?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. sugar</button>
+                        <button type="button" data-answer="B">B. butter</button>
+                        <button type="button" data-answer="C">C. water</button>
+                        <button type="button" data-answer="D">D. salt</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="47">
+                    <p>47. Melyik a 'morning' (reggel) ellentéte?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Noon</button>
+                        <button type="button" data-answer="B">B. Evening</button>
+                        <button type="button" data-answer="C">C. Afternoon</button>
+                        <button type="button" data-answer="D">D. Midnight</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="48">
+                    <p>48. Melyik szó illik a 'go to ___' kifejezésbe, ha aludni szeretnénk?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. home</button>
+                        <button type="button" data-answer="B">B. work</button>
+                        <button type="button" data-answer="C">C. bed</button>
+                        <button type="button" data-answer="D">D. school</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h2><img src="https://www.flaticon.com/svg/static/icons/svg/2607/2607519.svg" alt="Adjective/Preposition icon">IV. Melléknevek és Elöljárószavak</h2>
+                
+<div class="question" data-q="49">
+                    <p>49. Melyik elöljárószó illeszkedik a mondatba: The book is ___ the table.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. in</button>
+                        <button type="button" data-answer="B">B. under</button>
+                        <button type="button" data-answer="C">C. at</button>
+                        <button type="button" data-answer="D">D. on</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="50">
+                    <p>50. Melyik a 'big' (nagy) szó ellentéte?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. new</button>
+                        <button type="button" data-answer="B">B. small</button>
+                        <button type="button" data-answer="C">C. good</button>
+                        <button type="button" data-answer="D">D. fast</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="51">
+                    <p>51. Melyik a 'long' (hosszú) szó ellentéte?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. short</button>
+                        <button type="button" data-answer="B">B. tall</button>
+                        <button type="button" data-answer="C">C. high</button>
+                        <button type="button" data-answer="D">D. fast</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="52">
+                    <p>52. Melyik elöljárószó jelenti azt, hogy 'mögött'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. In front of</button>
+                        <button type="button" data-answer="B">B. Next to</button>
+                        <button type="button" data-answer="C">C. Behind</button>
+                        <button type="button" data-answer="D">D. Between</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="53">
+                    <p>53. Válaszd ki a helyes melléknevet: The film is very ___ (érdekes).</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. boring</button>
+                        <button type="button" data-answer="B">B. expensive</button>
+                        <button type="button" data-answer="C">C. interesting</button>
+                        <button type="button" data-answer="D">D. bad</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="54">
+                    <p>54. Válaszd ki a helyes melléknevet: The shoes are very ___ (drága).</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. cheap</button>
+                        <button type="button" data-answer="B">B. expensive</button>
+                        <button type="button" data-answer="C">C. easy</button>
+                        <button type="button" data-answer="D">D. clean</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="55">
+                    <p>55. Melyik elöljárószó illeszkedik a mondatba: My school is ___ the cinema and the park.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. behind</button>
+                        <button type="button" data-answer="B">B. on</button>
+                        <button type="button" data-answer="C">C. in front of</button>
+                        <button type="button" data-answer="D">D. between</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="56">
+                    <p>56. Melyik elöljárószó illeszkedik a mondatba: They are ___ my class.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. at</button>
+                        <button type="button" data-answer="B">B. on</button>
+                        <button type="button" data-answer="C">C. in</button>
+                        <button type="button" data-answer="D">D. next to</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="57">
+                    <p>57. Melyik a 'hot' (forró/meleg) szó ellentéte?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. new</button>
+                        <button type="button" data-answer="B">B. old</button>
+                        <button type="button" data-answer="C">C. cold</button>
+                        <button type="button" data-answer="D">D. big</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="58">
+                    <p>58. Melyik elöljárószó jelenti azt, hogy 'mellett/közel'? The TV is ___ the bookcase.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. on</button>
+                        <button type="button" data-answer="B">B. in</button>
+                        <button type="button" data-answer="C">C. under</button>
+                        <button type="button" data-answer="D">D. next to</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="59">
+                    <p>59. Melyik szó jelenti azt, hogy 'reggel'?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Afternoon</button>
+                        <button type="button" data-answer="B">B. Evening</button>
+                        <button type="button" data-answer="C">C. Morning</button>
+                        <button type="button" data-answer="D">D. Night</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="60">
+                    <p>60. Válaszd ki a helyes melléknevet: This car is very ___ (gyors).</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. slow</button>
+                        <button type="button" data-answer="B">B. fast</button>
+                        <button type="button" data-answer="C">C. nice</button>
+                        <button type="button" data-answer="D">D. small</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="61">
+                    <p>61. Melyik elöljárószó illeszkedik a mondatba: I live ___ London.</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. at</button>
+                        <button type="button" data-answer="B">B. on</button>
+                        <button type="button" data-answer="C">C. in</button>
+                        <button type="button" data-answer="D">D. to</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="62">
+                    <p>62. Melyik a 'happy' (boldog) szó ellentéte?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. excited</button>
+                        <button type="button" data-answer="B">B. sad</button>
+                        <button type="button" data-answer="C">C. glad</button>
+                        <button type="button" data-answer="D">D. angry</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="63">
+                    <p>63. A macska a doboz ___ van. (benne)</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. on</button>
+                        <button type="button" data-answer="B">B. under</button>
+                        <button type="button" data-answer="C">C. in</button>
+                        <button type="button" data-answer="D">D. next to</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="64">
+                    <p>64. Válaszd ki a helyes melléknevet: My brother is very ___ (magas).</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. short</button>
+                        <button type="button" data-answer="B">B. small</button>
+                        <button type="button" data-answer="C">C. tall</button>
+                        <button type="button" data-answer="D">D. long</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h2><img src="https://www.flaticon.com/svg/static/icons/svg/2539/2539077.svg" alt="Numbers/Time icon">V. Számok és Idő</h2>
+                
+<div class="question" data-q="65">
+                    <p>65. Melyik nap a 'Sunday' (vasárnap) utáni nap?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Saturday</button>
+                        <button type="button" data-answer="B">B. Monday</button>
+                        <button type="button" data-answer="C">C. Tuesday</button>
+                        <button type="button" data-answer="D">D. Friday</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="66">
+                    <p>66. Hogyan kérdeznél rá, hogy 'Mennyi az idő?'</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. How much time is it?</button>
+                        <button type="button" data-answer="B">B. What is the time?</button>
+                        <button type="button" data-answer="C">C. When is it?</button>
+                        <button type="button" data-answer="D">D. How long is it?</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="67">
+                    <p>67. Melyik a '10' (tíz) utáni szám?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Nine</button>
+                        <button type="button" data-answer="B">B. Eleven</button>
+                        <button type="button" data-answer="C">C. Twelve</button>
+                        <button type="button" data-answer="D">D. One hundred</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="68">
+                    <p>68. Melyik kiejtés illik a 'three' (három) számhoz?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. tree</button>
+                        <button type="button" data-answer="B">B. free</button>
+                        <button type="button" data-answer="C">C. thrɪː (kb. szrí)</button>
+                        <button type="button" data-answer="D">D. sree</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="69">
+                    <p>69. A 7:30 időpont angolul:</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. twenty past seven</button>
+                        <button type="button" data-answer="B">B. seven o'clock</button>
+                        <button type="button" data-answer="C">C. half past seven</button>
+                        <button type="button" data-answer="D">D. seven thirty</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="70">
+                    <p>70. Hányadik nap a 'Thursday' (csütörtök), ha a hétfő az első nap?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Second</button>
+                        <button type="button" data-answer="B">B. Third</button>
+                        <button type="button" data-answer="C">C. Fourth</button>
+                        <button type="button" data-answer="D">D. Fifth</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="71">
+                    <p>71. Melyik szám a 'twenty' (húsz) utáni?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Ten</button>
+                        <button type="button" data-answer="B">B. Nineteen</button>
+                        <button type="button" data-answer="C">C. Twenty-one</button>
+                        <button type="button" data-answer="D">D. Thirty</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="72">
+                    <p>72. Melyik hónap a 'January' (január) utáni?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. December</button>
+                        <button type="button" data-answer="B">B. February</button>
+                        <button type="button" data-answer="C">C. March</button>
+                        <button type="button" data-answer="D">D. November</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="73">
+                    <p>73. Hány perc egy órában?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. 30</button>
+                        <button type="button" data-answer="B">B. 60</button>
+                        <button type="button" data-answer="C">C. 90</button>
+                        <button type="button" data-answer="D">D. 100</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="74">
+                    <p>74. A 'half past eight' (fél kilenc) időpont digiális formában:</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. 8:00</button>
+                        <button type="button" data-answer="B">B. 8:30</button>
+                        <button type="button" data-answer="C">C. 9:00</button>
+                        <button type="button" data-answer="D">D. 9:30</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="75">
+                    <p>75. Melyik évszakban van Karácsony (december)?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Spring</button>
+                        <button type="button" data-answer="B">B. Summer</button>
+                        <button type="button" data-answer="C">C. Autumn</button>
+                        <button type="button" data-answer="D">D. Winter</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="76">
+                    <p>76. Melyik a 'first' (első) szó utáni számsorrend?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. One</button>
+                        <button type="button" data-answer="B">B. Second</button>
+                        <button type="button" data-answer="C">C. Third</button>
+                        <button type="button" data-answer="D">D. Forth</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="77">
+                    <p>77. Melyik a helyes kiejtés: 'eight' (nyolc)?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. ate</button>
+                        <button type="button" data-answer="B">B. eigh</button>
+                        <button type="button" data-answer="C">C. ee-ght</button>
+                        <button type="button" data-answer="D">D. eiht</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="78">
+                    <p>78. A 'quarter past three' azt jelenti:</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. 3:00</button>
+                        <button type="button" data-answer="B">B. 3:15</button>
+                        <button type="button" data-answer="C">C. 3:30</button>
+                        <button type="button" data-answer="D">D. 3:45</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="79">
+                    <p>79. Hány nap van egy héten?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. 5</button>
+                        <button type="button" data-answer="B">B. 6</button>
+                        <button type="button" data-answer="C">C. 7</button>
+                        <button type="button" data-answer="D">D. 8</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="80">
+                    <p>80. A 'Tuesday' (kedd) melyik nap után következik?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Monday</button>
+                        <button type="button" data-answer="B">B. Wednesday</button>
+                        <button type="button" data-answer="C">C. Sunday</button>
+                        <button type="button" data-answer="D">D. Saturday</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h2><img src="https://www.flaticon.com/svg/static/icons/svg/1057/1057866.svg" alt="Reading icon">VI. Szövegértés (Reading Comprehension) (20 pont)</h2>
+                <h3>Olvassd el a rövid szövegeket és válaszolj a kérdésekre! (Minden kérdés 2 pontot ér)</h3>
+
+                <div class="reading-comprehension-text">
+                    <p><strong>Text 1: A Busy Weekday</strong></p>
+                    <p>My name is Mark. I live in a small, quiet town with my wife, Emma. I work in an office in the city, so I always wake up early at half past six. I usually eat a quick breakfast of toast and coffee. I take the train to work because driving is slow and expensive. I start work at nine and finish at five. After work, I like to relax. Emma and I often cook dinner together in the kitchen, and then we watch a movie in the living room. We are happy with our life.</p>
+                </div>
+                
+                <div class="question" data-q="81">
+                    <p>81. What is Mark's town like?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Big and noisy</button>
+                        <button type="button" data-answer="B">B. Small and quiet</button>
+                        <button type="button" data-answer="C">C. New and modern</button>
+                        <button type="button" data-answer="D">D. Busy and old</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="82">
+                    <p>82. Why does Mark take the train?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Because he doesn't like his car.</button>
+                        <button type="button" data-answer="B">B. Because the train is cheap and fast.</button>
+                        <button type="button" data-answer="C">C. Because driving is slow and expensive.</button>
+                        <button type="button" data-answer="D">D. Because he starts work at nine.</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="83">
+                    <p>83. What do Mark and Emma do immediately after work?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. They watch a movie.</button>
+                        <button type="button" data-answer="B">B. They go to the city.</button>
+                        <button type="button" data-answer="C">C. They relax and cook dinner.</button>
+                        <button type="button" data-answer="D">D. They eat toast and coffee.</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="84">
+                    <p>84. Where do they usually watch a movie?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. In the kitchen</button>
+                        <button type="button" data-answer="B">B. In the city</button>
+                        <button type="button" data-answer="C">C. In the park</button>
+                        <button type="button" data-answer="D">D. In the living room</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="85">
+                    <p>85. What does Mark usually eat for breakfast?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Bread and butter</button>
+                        <button type="button" data-answer="B">B. Toast and coffee</button>
+                        <button type="button" data-answer="C">C. Nothing, he is too early</button>
+                        <button type="button" data-answer="D">D. Pizza and ice cream</button>
+                    </div>
+                </div>
+
+                <div class="reading-comprehension-text">
+                    <p><strong>Text 2: The Green Family</strong></p>
+                    <p>Mr. and Mrs. Green live in a beautiful, old house near a big park. They have two children, a boy and a girl. The boy, Sam, is 10 years old and he loves playing football. The girl, Lily, is younger; she is 6. She often draws pictures of animals. On weekends, the family sometimes goes to the park to have a picnic. They take a basket with sandwiches and fruit juice. They don't like to watch TV a lot, because they prefer outdoor activities. They think spending time together outside is important.</p>
+                </div>
+
+                <div class="question" data-q="86">
+                    <p>86. What is true about the Green's house?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. It is new and modern.</button>
+                        <button type="button" data-answer="B">B. It is small and far from the park.</button>
+                        <button type="button" data-answer="C">C. It is beautiful and old.</button>
+                        <button type="button" data-answer="D">D. It is in the city center.</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="87">
+                    <p>87. What does Lily like to do?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Play football</button>
+                        <button type="button" data-answer="B">B. Draw pictures of animals</button>
+                        <button type="button" data-answer="C">C. Watch TV</button>
+                        <button type="button" data-answer="D">D. Cook dinner</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="88">
+                    <p>88. When does the family sometimes go to the park?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Every day</button>
+                        <button type="button" data-answer="B">B. On weekdays</button>
+                        <button type="button" data-answer="C">C. On weekends</button>
+                        <button type="button" data-answer="D">D. Never</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="89">
+                    <p>89. What do they take for the picnic?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Pizza and coffee</button>
+                        <button type="button" data-answer="B">B. Sandwiches and fruit juice</button>
+                        <button type="button" data-answer="C">C. A dog and a basket</button>
+                        <button type="button" data-answer="D">D. Only fruit juice</button>
+                    </div>
+                </div>
+
+                <div class="question" data-q="90">
+                    <p>90. What do the Greens prefer to do?</p>
+                    <div class="options">
+                        <button type="button" data-answer="A">A. Watch TV indoors.</button>
+                        <button type="button" data-answer="B">B. Play games inside.</button>
+                        <button type="button" data-answer="C">C. Prefer outdoor activities.</button>
+                        <button type="button" data-answer="D">D. Eat a lot of food.</button>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="calculate-button" onclick="calculateScore()">Pontszámítás és Értékelés</button>
+        </form>
+
+        <div id="result-container" style="display:none;">
+            <h2>Eredmény</h2>
+            <p>Elért pontszám: <span id="score">0</span> / 100</p>
+            <p class="score-evaluation" id="evaluation"></p>
+        </div>
+    </div>
+
+    <script>
+        // Helyes válaszok tárolása: Kérdésszám: Helyes betűjel
+        const correctAnswers = {
+            1: 'C', 2: 'B', 3: 'D', 4: 'B', 5: 'B', 6: 'D', 7: 'D', 8: 'C', 9: 'B', 10: 'C', 11: 'B',
+            12: 'C', 13: 'B', 14: 'C', 15: 'B', 16: 'C', // I. Nyelvtan (16 kérdés)
+
+            17: 'B', 18: 'B', 19: 'C', 20: 'B', 21: 'B', 22: 'C', 23: 'C', 24: 'D', 25: 'C', 26: 'C', 27: 'B', 28: 'A', 29: 'A', 30: 'C', 31: 'C', 32: 'B',
+            // II. Nyelvtan (16 kérdés)
+
+            33: 'C', 34: 'B', 35: 'A', 36: 'B', 37: 'C', 38: 'B', 39: 'B', 40: 'B', 41: 'D', 42: 'C', 43: 'C', 44: 'C', 45: 'B', 46: 'B', 47: 'B', 48: 'C',
+            // III. Szókincs (16 kérdés)
+
+            49: 'D', 50: 'B', 51: 'A', 52: 'C', 53: 'C', 54: 'B', 55: 'D', 56: 'C', 57: 'C', 58: 'D', 59: 'C', 60: 'B', 61: 'C', 62: 'B', 63: 'C', 64: 'C',
+            // IV. Melléknevek és Elöljárószavak (16 kérdés)
+
+            65: 'B', 66: 'B', 67: 'B', 68: 'C', 69: 'C', 70: 'C', 71: 'C', 72: 'B', 73: 'B', 74: 'B', 75: 'D', 76: 'B', 77: 'A', 78: 'B', 79: 'C', 80: 'A',
+            // V. Számok és Idő (16 kérdés)
+
+            // VI. Szövegértés (10 kérdés - mindegyik 2 pont)
+            81: 'B', 82: 'C', 83: 'C', 84: 'D', 85: 'B', 
+            86: 'C', 87: 'B', 88: 'C', 89: 'B', 90: 'C' 
+        };
+
+        const scorePerQuestionGeneral = 1; // 80 kérdés * 1 pont = 80 pont
+        const scorePerQuestionReading = 2; // 10 kérdés * 2 pont = 20 pont
+
+        // Eseménykezelő a válasz gombokhoz
+        document.querySelectorAll('.options button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Töröljük a 'selected' osztályt az összes gombból ebben a kérdésben
+                this.parentNode.querySelectorAll('button').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                // Hozzáadjuk a 'selected' osztályt a kattintott gombhoz
+                this.classList.add('selected');
+                // Adatot tárolunk a kérdés elemén, hogy melyik válasz van kiválasztva
+                this.closest('.question').dataset.selected = this.dataset.answer;
+            });
+        });
+
+        // Pontszámító funkció
+        function calculateScore() {
+            let totalScore = 0;
+            const questions = document.querySelectorAll('.question');
+            
+            questions.forEach(question => {
+                const qNum = parseInt(question.dataset.q);
+                const selectedAnswer = question.dataset.selected;
+                const correctAnswer = correctAnswers[qNum];
+
+                // Külön pontozzuk a szövegértési kérdéseket (81-től 90-ig)
+                let currentScorePerQuestion = (qNum >= 81 && qNum <= 90) ? scorePerQuestionReading : scorePerQuestionGeneral;
+
+                // Ellenőrizzük, hogy van-e kiválasztott válasz, és ha igen, helyes-e
+                if (selectedAnswer && selectedAnswer === correctAnswer) {
+                    totalScore += currentScorePerQuestion;
+                }
+            });
+
+            // Eredmények megjelenítése
+            document.getElementById('score').textContent = totalScore;
+            const evaluationResult = getEvaluation(totalScore);
+            document.getElementById('evaluation').textContent = evaluationResult.text;
+            document.getElementById('evaluation').className = 'score-evaluation ' + evaluationResult.class;
+            document.getElementById('result-container').style.display = 'block';
+
+            // Gomb és eredmény konténer görgetése
+            document.getElementById('result-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Értékelés funkció
+        function getEvaluation(score) {
+            let evaluation = { text: "", class: "" };
+            if (score >= 80) {
+                evaluation.text = `Kiváló! (${score} / 100 pont) Stabil A1 szintű tudásod van, magabiztosan megkezdheted az A2-es szintet! Gratulálok!`;
+                evaluation.class = 'excellent';
+            } else if (score >= 50) {
+                evaluation.text = `Jó eredmény! (${score} / 100 pont) Kezdő A1 szintű tudásod van. Erősítened kell még az alapokat (Present Simple 3. személy és a főbb szavak), de jó úton haladsz!`;
+                evaluation.class = 'good';
+            } else {
+                evaluation.text = `Szeretnél még fejlődni! (${score} / 100 pont) Teljes kezdő szint. Szükséges az A1-es anyag alapos áttekintése. Ne add fel, gyakorlással sokat javulhatsz!`;
+                evaluation.class = 'beginner';
+            }
+            return evaluation;
+        }
+    </script>
+
+</body>
+</html>
